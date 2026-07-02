@@ -18,6 +18,8 @@ Install dependencies and browsers:
 
 ```bash
 npm install
+npx playwright install
+or
 npx playwright install --with-deps
 ```
 
