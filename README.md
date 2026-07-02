@@ -26,7 +26,7 @@ npx playwright install --with-deps
 > `--with-deps` also installs the OS libraries the browsers need. On Windows/macOS
 > `npx playwright install` (without `--with-deps`) is sufficient.
 
-No Docker, local server, or `.env` file is required — the app under test is public
+No Docker, local server, or `.env` file is required, the app under test is public
 and always available. Copy `.env.example` to `.env` only if you want to override the
 base URL.
 
@@ -162,7 +162,7 @@ raised above defaults (test 45s / expect 10s / action 15s) specifically because
 `performance_glitch_user` injects multi-second delays — see the inline justification in
 `playwright.config.ts`.
 
-**Validating app behaviour (not trusting the brief blindly).** The brief describes
+**Validating app behaviour.** The brief describes
 `error_user` as having "intermittent form errors on checkout". Before writing an assertion
 I probed the live app (5 scripted checkout runs) and found the real behaviour: step one
 (customer info) always succeeds, but the **Finish** button on step two is a *silent no-op* —
@@ -211,9 +211,6 @@ that habit transfers directly to client environments where data pollution is a r
 ---
 
 ## 7. LLM usage & AI onboarding
-
-Per the brief, the prompts used while building this suite — and how I directed and
-validated the output — are documented in [`llm-prompts.md`](./llm-prompts.md).
 
 For **ongoing** AI-assisted work, [`llm/skill.md`](./llm/skill.md) is a self-contained
 onboarding brief that teaches another AI agent (or a new engineer) how this project is
